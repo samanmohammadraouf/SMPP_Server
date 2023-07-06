@@ -106,7 +106,8 @@ class AttendanceDB():
 
 ## Encryption
 برای پیاده سازی این پروتکل قراردادی که در بخش منطق آن توضیح داده شد ، از رمزنگازی AES  استفاده شده است . این الگوریتم یکی از الگوریتم های ارتباطی متقارن می باشد که امروزه به شکل بسیار وسیعی استفاده می شود . توابع زیر برای فرایند رمزگذاری و رمزگشایی پیام ها تعریف شده اند . 
-```    def aes_encrypt(self,message, key):
+```
+    def aes_encrypt(self,message, key):
         iv = b'\x00' * AES.block_size
         cipher = AES.new(key.encode("utf-8"), AES.MODE_CBC, iv=iv)
         ciphertext = cipher.encrypt(pad(message.encode("utf-8"), AES.block_size))
